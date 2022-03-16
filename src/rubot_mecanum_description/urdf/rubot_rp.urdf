@@ -183,7 +183,7 @@
   <!-- LIDAR base_scan -->
   <link name="base_scan">
     <visual name="sensor_body">
-      <origin rpy="0 0 0" xyz="0 0 0.04"/>
+      <origin rpy="0 0 3.14" xyz="0 0 0.04"/>
       <geometry>
         <mesh filename="package://rubot_mecanum_description/meshes/nexus/X4.stl" scale="0.0015 0.0015 0.0015"/>
       </geometry>
@@ -204,7 +204,7 @@
   <!-- LIDAR base_scan JOINT base_link -->
   <joint name="scan_joint" type="fixed">
     <axis xyz="0 0 1"/>
-    <origin rpy="0 0 0" xyz="0 0 0.09"/>
+    <origin rpy="0 0 3.14" xyz="0 0 0.09"/>
     <parent link="base_link"/>
     <child link="base_scan"/>
   </joint>
