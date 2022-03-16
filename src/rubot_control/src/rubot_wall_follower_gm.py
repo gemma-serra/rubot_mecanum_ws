@@ -79,7 +79,7 @@ class WallFollower:
             else:
                 newRange.append(val) """
         # Obtenemos las mediciones de A y B y las guardamos en variables locales
-        """zero angle is on th back --> angle-180 """
+        """zero angle is on the back --> angle-180 """
         A = scan.ranges[int(round(self.__unWrapAngle(90 + np.rad2deg(self.__theta)))) * self.__scanRangesLengthCorrectionFactor]
         B = scan.ranges[(self.__unWrapAngle(90)) *
                         self.__scanRangesLengthCorrectionFactor]
@@ -191,17 +191,17 @@ class WallFollower:
         """Devuelve un angulo de -180 a 180."""
 
         if 0 <= angle <= 180:
-            return angle
+            return (angle-180)
         else:
-            return angle - 360
+            return (angle - 540)
 
     def __unWrapAngle(self, angle):
         """Devuelve un angulo de 0 a 360."""
 
         if angle < 0:
-            return angle + 360
+            return angle + 180
         else:
-            return angle
+            return (angle-180)
 
     def __shutdown(self):
         """Para el robot antes de detener el nodo."""
